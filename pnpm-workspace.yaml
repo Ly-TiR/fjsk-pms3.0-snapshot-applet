@@ -1,0 +1,9 @@
+ignoredBuiltDependencies:
+  - '@parcel/watcher'
+  - '@uni-helper/unocss-preset-uni'
+  - core-js
+  - esbuild
+  - vue-demi
+
+patchedDependencies:
+  '@dcloudio/uni-h5': patches/@dcloudio__uni-h5.patch

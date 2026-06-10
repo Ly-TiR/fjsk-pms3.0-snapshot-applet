@@ -1,0 +1,23 @@
+/* 全局自定义样式 */
+
+:root,
+page {
+  --primary-color: #007aff;
+}
+
+/* 自定义导航栏 */
+.custom-navbar {
+  background: #007aff;
+  .nav-content {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .nav-title {
+    color: #fff;
+    font-size: 32rpx;
+    font-weight: 600;
+  }
+}
