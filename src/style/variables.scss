@@ -1,0 +1,48 @@
+// ===== 品牌色彩体系 =====
+// 来源：随手拍 AI工作台 移动端 Prototype.html :root 变量
+:root {
+  --brand: #1677ff;
+  --brand-weak: #e8f3ff;
+  --brand-gradient: linear-gradient(180deg, #1768dc 0%, #2478f6 58%, #2f86f8 100%);
+  --bg: #f3f5f8;
+  --card: #ffffff;
+  --line: #e6ebf2;
+  --text: #1f2329;
+  --sub: #8a94a6;
+  --success: #52c41a;
+  --info: #1677ff;
+  --warning: #faad14;
+  --danger: #ff4d4f;
+
+  // 圆角
+  --radius-page: 8px;
+  --radius-card: 8px;
+  --radius-input: 8px;
+
+  // 阴影
+  --shadow-card: 0 6px 16px rgba(15, 23, 42, 0.045);
+  --shadow-nav: 0 10px 24px rgba(23, 104, 220, 0.16);
+
+  // 安全区
+  --safe-bottom: 16px;
+
+  // 导航尺寸
+  --status-safe-top: 10px;
+  --status-bar-height: 28px;
+  --nav-height: 56px;
+  --bottom-nav-height: 58px;
+  --bottom-nav-safe: var(--bottom-nav-height);
+
+  // 字体大小
+  --app-text-sm: 12px;
+  --app-text-md: 13px;
+  --app-text-lg: 15px;
+  --app-text-xl: 17px;
+  --app-weight-body: 500;
+  --app-weight-label: 600;
+  --app-weight-title: 700;
+
+  // 间距
+  --app-card-gap: 12px;
+  --app-card-pad: 13px;
+}

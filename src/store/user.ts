@@ -1,32 +1,32 @@
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
-interface IUserState {
+export interface IUserInfo {
   id: number
   username: string
   avatar: string
   token: string
+  realName?: string
+  orgName?: string
+  roleCode?: string
+  roleName?: string
 }
 
-const defaultUserState: IUserState = {
+const defaultUserInfo: IUserInfo = {
   id: 0,
   username: '',
-  avatar: '/static/images/default-avatar.png',
+  avatar: '',
   token: '',
 }
 
 export const useUserStore = defineStore(
   'user',
   () => {
-    const userInfo = ref<IUserState>({ ...defaultUserState })
+    const userInfo = ref<IUserInfo>({ ...defaultUserInfo })
+    const isLoggedIn = computed(() => !!userInfo.value.token)
 
-    const setUserInfo = (val: Partial<IUserState>) => {
+    const setUserInfo = (val: Partial<IUserInfo>) => {
       userInfo.value = { ...userInfo.value, ...val }
-    }
-
-    const removeUserInfo = () => {
-      userInfo.value = { ...defaultUserState }
-      uni.removeStorageSync('token')
     }
 
     const setToken = (token: string) => {
@@ -34,14 +34,50 @@ export const useUserStore = defineStore(
       uni.setStorageSync('token', token)
     }
 
-    const isLogined = computed(() => !!userInfo.value.token)
+    const removeUserInfo = () => {
+      userInfo.value = { ...defaultUserInfo }
+      uni.removeStorageSync('token')
+      uni.removeStorageSync('userInfo')
+    }
+
+    const login = async (credentials: { username: string; password: string }) => {
+      // 本地 mock 登录：模拟成功
+      const mockToken = 'mock-token-' + Date.now()
+      setUserInfo({
+        username: credentials.username,
+        token: mockToken,
+        realName: credentials.username === 'grid001' ? '网格员陈洁' : credentials.username,
+        orgName: '江汉路街道',
+        roleName: '随手拍处理',
+      })
+      return { code: 200, msg: '登录成功', data: { token: mockToken } }
+    }
+
+    const logout = async () => {
+      removeUserInfo()
+    }
+
+    const getUserInfo = async () => {
+      return { code: 200, data: userInfo.value }
+    }
 
     return {
       userInfo,
+      isLoggedIn,
       setUserInfo,
-      removeUserInfo,
       setToken,
-      isLogined,
+      removeUserInfo,
+      login,
+      logout,
+      getUserInfo,
     }
+  },
+  {
+    persist: {
+      storage: {
+        getItem: uni.getStorageSync,
+        setItem: uni.setStorageSync,
+      },
+    },
   },
 )

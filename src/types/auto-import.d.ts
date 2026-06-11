@@ -80,8 +80,10 @@ declare global {
   const useCustomNavbar: typeof import('../hooks/useCustomNavbar')['useCustomNavbar']
   const useId: typeof import('vue')['useId']
   const useModel: typeof import('vue')['useModel']
+  const usePageAuth: typeof import('../hooks/usePageAuth')['usePageAuth']
   const useRequest: typeof import('../hooks/useRequest')['default']
   const useSlots: typeof import('vue')['useSlots']
+  const useSnapshot: typeof import('../hooks/useSnapshot')['useSnapshot']
   const useTemplateRef: typeof import('vue')['useTemplateRef']
   const useUpload: typeof import('../hooks/useUpload')['default']
   const watch: typeof import('vue')['watch']
@@ -175,8 +177,10 @@ declare module 'vue' {
     readonly useCustomNavbar: UnwrapRef<typeof import('../hooks/useCustomNavbar')['useCustomNavbar']>
     readonly useId: UnwrapRef<typeof import('vue')['useId']>
     readonly useModel: UnwrapRef<typeof import('vue')['useModel']>
+    readonly usePageAuth: UnwrapRef<typeof import('../hooks/usePageAuth')['usePageAuth']>
     readonly useRequest: UnwrapRef<typeof import('../hooks/useRequest')['default']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
+    readonly useSnapshot: UnwrapRef<typeof import('../hooks/useSnapshot')['useSnapshot']>
     readonly useTemplateRef: UnwrapRef<typeof import('vue')['useTemplateRef']>
     readonly useUpload: UnwrapRef<typeof import('../hooks/useUpload')['default']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>

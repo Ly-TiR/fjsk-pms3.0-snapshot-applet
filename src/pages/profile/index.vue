@@ -1,0 +1,1 @@
+<template><view class="page-body"><view class="card"><view class="empty-card">个人资料页（预留）</view></view></view></template><script setup lang="ts"></script><style scoped>.page-body{padding:14px;}</style>

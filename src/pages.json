@@ -1,22 +1,123 @@
 {
   "pages": [
     {
-      "path": "pages/index/index",
+      "path": "pages/login/login",
       "type": "home",
       "style": {
-        "navigationBarTitleText": "首页"
+        "navigationStyle": "custom"
       }
+    },
+    {
+      "path": "pages/ai-workbench/index",
+      "type": "page",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "小匠"
+      },
+      "layout": "tabbar"
+    },
+    {
+      "path": "pages/create/index",
+      "type": "page",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "发起"
+      },
+      "layout": "tabbar"
+    },
+    {
+      "path": "pages/detail/index",
+      "type": "page",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "随手拍详情"
+      }
+    },
+    {
+      "path": "pages/index/index",
+      "type": "page",
+      "style": {}
+    },
+    {
+      "path": "pages/ledger/index",
+      "type": "page",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "随手拍"
+      },
+      "layout": "tabbar"
+    },
+    {
+      "path": "pages/messages/index",
+      "type": "page",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "消息通知"
+      }
+    },
+    {
+      "path": "pages/mine/index",
+      "type": "page",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "我的"
+      },
+      "layout": "tabbar"
+    },
+    {
+      "path": "pages/mine-initiated/index",
+      "type": "page",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "我发起的"
+      }
+    },
+    {
+      "path": "pages/profile/index",
+      "type": "page",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "个人资料"
+      }
+    },
+    {
+      "path": "pages/settings/index",
+      "type": "page",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "设置"
+      }
+    },
+    {
+      "path": "pages/task-list/index",
+      "type": "page",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "待处理"
+      }
+    },
+    {
+      "path": "pages/workbench/index",
+      "type": "page",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "首页"
+      },
+      "layout": "tabbar"
     }
   ],
   "globalStyle": {
     "navigationStyle": "default",
-    "navigationBarTitleText": "test-applet",
-    "navigationBarBackgroundColor": "#f8f8f8",
-    "navigationBarTextStyle": "black",
-    "backgroundColor": "#FFFFFF"
+    "navigationBarTitleText": "随手拍 AI工作台",
+    "navigationBarBackgroundColor": "#1677ff",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f3f5f8"
   },
   "easycom": {
-    "autoscan": true
+    "autoscan": true,
+    "custom": {
+      "^fg-(.*)": "@/components/fg-$1/fg-$1.vue"
+    }
   },
   "subPackages": []
 }

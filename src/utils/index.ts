@@ -1,4 +1,22 @@
 /**
+ * 需要登录才能访问的页面列表
+ */
+export const needLoginPages = [
+  '/pages/index/index',
+  '/pages/workbench/index',
+  '/pages/ledger/index',
+  '/pages/create/index',
+  '/pages/detail/index',
+  '/pages/mine/index',
+  '/pages/ai-workbench/index',
+  '/pages/task-list/index',
+  '/pages/mine-initiated/index',
+  '/pages/messages/index',
+  '/pages/profile/index',
+  '/pages/settings/index',
+]
+
+/**
  * 获取环境变量中的 baseUrl
  */
 export function getEnvBaseUrl() {
